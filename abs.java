@@ -12,7 +12,7 @@ import java.io.*;
 	} 	
   } 
   class child extends parent 
-  {  //abstract void fuckyou(); class have to be abstract for overiding a abstract object 
+  {  //abstract void you(); class have to be abstract for overiding a abstract object 
      void callme ()
 	  { 
 	    System.out.println("i am call1") ;
