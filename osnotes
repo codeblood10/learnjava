@@ -1,0 +1,85 @@
+l1- introduction to operating system
+os -main job is management(arbitration)
+abstraction
+  processes,thread,file,socket,memory page
+mechanism
+  create ,schedule,open ,write ,allocate
+resources
+ memory,network card,dram
+
+os element ex.
+-abstraction
+ memory page
+-mechanism
+allocate ,map to process
+-policies
+ lru (least recently used)
+
+design prinicples
+separation of mechanism and policy
+ -flexible mechanism to support many policies
+ -e.g lru , lfu
+ optimize for common case
+   requirement of machine and hardware and user and workload
+
+  user/kernel  boundary
+   user level/mode
+     unpreviliged , for application
+   kernel mode
+      previlige mode , for os
+     ex trap interrupt ,system call
+   a special bit is reseved for that mode
+   for eg
+      when system call is invoked user mode is changed to kernel mode and when
+      return from system call again bit is set to user mode
+      synchronous mode process wait till execution is complete
+   user kernel transition are not cheap because it is overhead  in time and it affects
+   hardware cache storage by replacing application data
+   operating system provide no of srervices
+    system call file manipulation etc.
+   some system call :
+    send a signal to a process -> kill
+    set the group identity of a process -> setgid
+    mount as file system -> mount
+    read/write  system parameter - systcl
+
+   monolithic os
+     every services is a part of the operating and every thing is already present
+     con in the approach is that source code is complex and is large
+    ex windows ,linux
+   modular os
+      os provided a basic api and according to our need we can add different module
+      module have to implement a predefined interface to work with os
+      ex- different file system can be implemented using different module
+      ex
+     microkernel
+         only very basic services are part of the os such as threads address space and other thing
+         every thing else is a part of the user application which in turn demand a frequent interaction b/w the
+         the user kernal mode which lead to a costly mechanism
+          ex embedded sys.
+      --read linux and mac os architectures from video-
+
+    p2l1 - process and its management
+       process - an instance of a executing program
+       address we  have are virtual address we have to link physiacal address through page tabele
+       by mmu.physical address can be at disk or dram
+        program counter-keep record of program
+        pc is stored in reg.
+        size operator to show memory layout
+        context switch is costly no fo load insstructiuon cycle for pcb
+        and cold cache is also a problem
+    -- all process share the whole address space
+      for prosees creation
+          fork ==
+             fork makes a child proces and program counter start from a the same  line
+          exec ==
+             make another image of parent and child start first instruction
+             and image is made into same process space program may never returtn to the orignal space if there is no
+             failure in exec;
+     --medium term scheduler swap out the process which are not active to free space with some high priority processes
+      ipc
+       message passing is a medium for ipc at kernel level it is secure but its a overhead for cpu
+       shared memory is another form of message communication processes shared a common memory wchich is mapped to virtual address space of both the processes
+       and the procedure is taken place in user space wcich require a les overhead
+       but it depend upon the size and no of message while compariogn with the
+        message passing
