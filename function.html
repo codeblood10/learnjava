@@ -1,0 +1,58 @@
+<script>
+      var f = function(x){
+          return x;
+      }
+     f(3);
+     (function(){
+       var x ="hello";
+       console.log(x);
+       console.log(arguments);
+     })();
+    // function are object
+    // arguements.length give  no of args of function
+     var txt = f.toString();
+      console.log(txt);
+       /*
+        JavaScript function definitions do not specify data types for parameters.
+
+        JavaScript functions do not perform type checking on the passed arguments.
+
+       JavaScript functions do not check the number of arguments received.
+     */
+ // mising srguement value are set to undefined
+ // every function have arguement object with it contains length and argument vector
+
+// every thing is apart of window object so we can call window.function() to call any function
+ function w ()
+  {  var x = this ;
+     //will return window object
+  }
+  w();
+  var person = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+var myObject = {
+    firstName:"Mary",
+    lastName: "Doe",
+}
+console.log(person.fullName(myObject));
+person.fullName.call(myObject); //call is used to call function belonging to other objects
+//apply is same as call
+// the diff apply take an arguement array
+console.log(Math.max.apply(null,[1,2,3])); // same as.call(1.2.3);
+/*
+The Value of this
+In JavaScript strict mode, the first argument becomes the value of this in the invoked function, even if the argument is not an object.
+
+In "non-strict" mode, if the value of the first argument is null or undefined, it is replaced with the global object.
+*/
+//javascript  closure is a function having access to the parent scope, even after the parent function has closed.
+var add = (function(){var counter = 0 ;
+      return function() {return counter+=1;}
+   })();  //private variable ;
+   console.log(add()+add()+add());
+</script>

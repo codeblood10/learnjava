@@ -1,0 +1,23 @@
+<html>
+ <head>
+    <script>
+         var  validate = ()=>{
+            var x = document.forms["myf"]["no"].value;
+             if(x>5&&x<3)
+             {
+               document.write("between 3 and 5");
+             }
+             else
+             {
+               document.write(x);
+             }
+          }
+    </script>
+ </head>
+  <body>
+        <form name="myf" action='x.html' onsubmit="validate()">
+             enter:  <input type ="number" name="no" min='1' max ='3'>
+                       <input type="submit" value="Submit">
+       </form>
+    <body>
+</html>

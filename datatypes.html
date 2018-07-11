@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+ <head>
+ </head>
+ <body>
+ <script type="text/javascript">
+  // ** power operator
+  //var x ; mean x is  undefined ;
+   // all numeric value in javascript are type num
+   // y a number is represented by the floating-point format IEEE 754, also called “double precision”. There are 8 bytes per number
+   document.write(0Xff); //for hexadecimal start with 0x
+   document.write(010);  //for octal starts with with 0
+   document.write(2e3); // 2 with 3 zeroes
+   document.write(3e-1+"<br/>"); // 0.3
+   document.write(1/0) ; // infinity
+   document.write(0/0); // nan  not-a-number
+   // nan is does not represent anything cannot be compare to or
+   var n = 0/0 ;
+   document.write(isNaN(n)); //return true or false
+    var s = "12.34" ;
+    document.write("</br>");
+    document.write(+s); // conversion to num
+     //all mathematical function  except binary plus can lead can convert a string to a number
+     document.write(+"  12"); // while parsing into number the white spaces are ignored
+      document.write(+"12test")// if a value can not be converted into the number than it  return NaN
+      // false, null, undefined are also converted to 0.
+      var n = 13;
+      function isNumeric(n) {
+      return !isNaN(parseFloat(n)) && isFinite(n);
+      }// isnumeric is most reliable check for the numeric value in the javascript
+       // parseInt and parseFloat are two function which are designed to convert some special string which cannot be converted through the + or unary operations 12px
+       document.write(parseInt("12px"));
+       document.write(parseFloat("1.2.3")); // it will take the decimal value 1.2
+  </script>
+  <br>
+  <script type="text/javascript">
+   document.write(0.1+0.2);
+   document.write(+"a123");  // it will return nan seeing the first
+    // char
+    document.write(0.1.toFixed(20)); // it will represent the false result because binary representation may fail at a time
+    var i =0;
+    //while(i!=10)
+    //{ document.write("a");
+     // i+=0.2; //this  might  be a bug in the broswer because of precision
+    // }
+     document.write(Math.floor(3.1));
+     document.write(Math.ceil(3.1));
+     document.write(Math.round(3.1 ));
+     document.write(12.3^0); // xoring will also remove the decimal part
+     document.write(Math.random()+"<br>"); // generate random no between 0 and 1 ;
+     document.write(typeof null) // null is a object;
+     /* typeof
+     The data type of NaN is number
+     The data type of an array is object
+     The data type of a date is object
+     The data type of null is object
+     The data type of an undefined variable is undefined *
+     The data type of a variable that has not been assigned a value is also undefined */
+     // but type of cannot be used to define that javascript object is an array or a date ;
+     // for that we can use constructor
+     var r   = [1,2,3,4];
+     document.write("<br/>");
+     document.write("<br/>");
+     document.write(r.constructor.toString().indexOf(Array));
+     document.write(isArray(r));
+      function isArray(myArray) {
+    return myArray.constructor === Array;
+      }      // typeconversion
+      var p = 13 ;
+      document.write(String(p));
+      //use  toString function
+      // also number methods like toExpontential and toPrecision also return string
+     // also we can convert date to String(Date());
+     document.write(Date());
+     // date methods();
+     /*
+     getDate()	Get the day as a number (1-31)
+     getDay()	Get the weekday a number (0-6)
+     getFullYear()	Get the four digit year (yyyy)
+     getHours()	Get the hour (0-23)
+     getMilliseconds()	Get the milliseconds (0-999)
+     getMinutes()	Get the minutes (0-59)
+getMonth()	Get the month (0-11)
+getSeconds()	Get the seconds (0-59)
+getTime()	Get the time (milliseconds since January 1, 1970)
+*/
+  var d =  new Date();
+  document.write(d.getTime()+"<br/>");
+  // numbers  method
+  // convert anything to  number
+  Number("23"); // convert the number to the 23
+  var y = "5"; // y is a string
+  var x = + y; // x is a number
+  function dec2bin( dec){
+    return (dec).toString(2);
+   }
+   document.write(dec2bin(10)+"<br/>");
+  function bin2dec(bin){
+    return parseInt(bin, 2).toString(10);
+   }
+   document.write(bin2dec(100)+"<br/>");
+  </script>
+
+
+ </body>
+ </html>

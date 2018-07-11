@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>w3</title>
+</head>
+<body>
+  <script type="text/javascript">
+       document.write('hello \
+       \v dolly');  // \v vertical tab
+       var x = new String("hello"); //string can be object
+
+       // (x === y) is false because x and y have different types (string and object)
+       // (x == y) is true because x and y have equal values
+       var str = "Please locate where 'locate' occurs!";
+       document.write(str);
+       var pos = str.indexOf("locate",8);
+       document.write(pos);
+       var x = str.lastIndexOf('locate');
+       var pa = str.search("locate"); // can also take reglar expression
+       document.write(x);
+       var res = str.slice(7, 13); // start and end position as parameters
+       var re = str.substr(7, 6); //  second parameter is length cant tkae negative values
+       var n = str.replace("locate", "W3Schools");//can also use regular expression
+       var r = str.substring(3,6); // can not acccept the negative value
+       var txt = "Hello";       // String
+        var p =txt.split(""); //convert the string to array spliting at given point
+          var myNumber = 128;
+          myNumber.toString(16);     // returns 80
+          myNumber.toString(8);      // returns 200
+          myNumber.toString(2);      // returns 10000000
+         //  number can be object
+         var n = new Number(90);
+         var o = 90 ;
+         // n == o true but n === o isn not true bcoz the n is a object
+          // nan and infinity are two different
+         var  x = new Number(89);
+         var  y = new Number(89);
+         // x===y cant be true bcoz two object can not be compared
+
+   </script>
+</body>
+</html>

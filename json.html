@@ -1,0 +1,15 @@
+<html>
+<head>
+
+</head>
+<script>
+var text = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+var o = JSON.parse(text);
+var x = JSON.stringify(o);
+console.log(x);
+console.log(o);
+</script>
+</html>

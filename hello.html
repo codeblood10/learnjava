@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>
+ first javascript document
+</title>
+</head>
+<body>
+  <script>  // simplest way to write javascript
+  document.write('hello world');
+  var years = prompt("how old are you",100);
+  console.log(years);//the prompt take two arguements if the
+  //users pass a value it gets return or the default value if return
+  // if  user click the cancel then null is return
+  var result = confirm("confirmed"); //return value of confirm is true/false
+   // string concatenation is as per java
+   document.write(result); //to document.write a variable message ;
+   document.write(~~12.34); // cutoff the decimal part
+   document.write(!!"string");//double not is use to convert the
+  //the value into the boolean
+  // logical operator returns the last evaluated value
+
+    var v = 10 ;
+  console.log(v);
+  //strings in javascript are immutable
+  var str = "ankit";
+  document.write(str.length);
+   document.write(str);
+   document.write(str.charAt(0));
+   document.write( str.indexOf("id"));  //find the substring in the existing string 
+   document.write('\n') ; 
+    document.write(str.indexOf("id", 2)); // second parameter is to provide a starting search index 
+    var  st = "stringify";  
+     document.write(st.substring(0,1));  
+     // comparison of two string in javascript is just using the > < operators;
+     document.write(st.substr(0,2)); //starting index and the length of the string  
+     document.write(st.slice(0,3)); //it misses the ending  
+     //index   
+      document.write('2' > '14'); // true or false  the value of  comparison  if one of data type is some num then string is converted to num 
+     </script>
+
+</body>  
+</html>

@@ -1,0 +1,25 @@
+<html>
+<head>
+
+</head>
+<body>
+ <script>
+       var name = "uttam"; //functional scope can be used inside a function only
+       const nam = "ankit"; //block scope
+
+   var ak = function()
+     {  let n  = 6; //block scope only
+          var k = "kunal";
+       console.log(name);
+       console.log(nam);
+     }
+  // console.log(n); out of scope
+
+ var ca = ()=>{
+    console.log(k);
+ }
+ </script>
+  <button onclick="ak()">fire</button>
+  <button onclick="ca()">ready</button>
+ </body>
+</html>

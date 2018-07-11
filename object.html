@@ -1,0 +1,28 @@
+<script>
+     var r = "ankit";
+     r = r+"sharma"; // as variable are immutable so new created string are foemed are kept in new memory
+     // evrey things in javascript is a object
+     var person = {firstName:"John", lastName:"Doe", age:50,
+     getname : function(){return this.firstName;}, // cannot use  arrow function as this is bind to closure in this case window
+     eyeColor:"blue"}; // and object are mutable
+    console.log(person.getname());
+    person.mom ="yeah"; // adding a property
+    delete person.age ; // delete a property
+    Object.defineProperty(person, 'gender', {
+    value:"male",
+    writable: true,
+    enumerable: true,
+    configurable: true
+     });
+     // lets define function as a constructor or pobject prototype
+     function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+  } //function constructor
+   var myFather = new Person("John", "Doe", 50, "blue");
+   Person.prototype.nationality = "English"; // adding a property to a prototype
+
+
+</script>

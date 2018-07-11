@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+   <script type="text/javascript">
+           var  a =  ["an","as",45]; // array are object of special type
+           document.write(typeof a);
+            for(i in a )
+            {  document.write(a[i]+"<br/>");
+             }
+           document.write(a);
+          /* JavaScript variables can be objects. Arrays are special kinds of objects.
+
+Because of this, you can have variables of different types in the same Array.
+
+You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array: */
+           var car = ["a" , "v" , "c"];
+           document.write(car.sort()); // you can pass comp function in to sort in a manner you want
+           // car.length for array
+           // array can hold object as  well as function and different datatypes
+           car.push("z");
+           // add element to array
+           car[4] = "z"; //same as above
+           /*
+           JavaScript does not support associative arrays.
+           You should use objects when you want the element names to be strings (text).
+           You should use arrays when you want the element names to be numbers.
+           */
+           Array.isArray(car); // to recongnize  the var  is an array
+           // we can use is instanceof Array
+           // more array methods
+           car  instanceof Array  ; // true
+
+           // different  methods of javascript array
+           document.write(car.toString()); // convert array into comma seprated string
+           document.write(car.join("$"))// convert to string but we can specify a operator in that
+           document.write(car);
+           car.pop();// remove last element from the array
+           car.push("mango"); // add element to the last and return the indexx value
+           car.shift(); // remove first  element
+           car.unshift("lemon"); // add at begnining
+           delete car[0];// leave a hole in array convert th index to  undefined
+           car.splice(2,0,"f","c")
+           /* The first parameter (2) defines the position where new elements should be added (spliced in).
+
+The second parameter (0) defines how many elements should be removed.
+
+The rest of the parameters ("f" , "c") define the new elements to be added.
+           */
+           car.splice(0,1); //remove first element
+           var myGirls = ["Cecilie", "Lone"];
+           var myBoys = ["Emil", "Tobias","Linus"];
+           var myChildren = myGirls.concat(myBoys);     // Concatenates (joins) myGirls and myBoys
+           var my = myGirls.concat(myBoys,myChildren);
+           var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+           var citrus = fruits.slice(1);
+					 document.write(citrus+"<br/>");
+           document.write(fruits.sort());
+           document.write(fruits.reverse());
+           var points = [40, 100, 1, 5, 25, 10];
+           points.sort(function(a, b){return a - b}); //cmp like qsort
+           document.write(points);
+           // sort array in a random manner
+           points.sort(function(a,b){return(0.5 - Math.random());});
+           document.write(points);
+           // sort an array of  objects
+           document.write("</br>");
+           var me = [
+            {name:"ankit",age:21},
+            {name:"ki",age:34},
+            {name:"io",age:43}
+             ]
+            me.sort(function(a,b){return a.age-b.age;});
+            for(i in me)
+            	{
+                   document.write(me[i].name);
+            	 }
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+  <script type="text/javascript">
+       // a regular ex is  a search pattern through which we can search  through a text for a particular pattern
+       var patt = /w3schools/i; // in this i is a modifiers that is used to modifies the search to be  case  insensitive
+       var str = "visit W3SCHOOLS w3schools";
+       var n = str.search(patt);  // searching for a regular expression
+       // search method also accept a string arguement it convert string to a regular expession
+         str = "Visit Microsoft!";
+         var res = str.replace(/microsoft/i, "W3Schools");
+         /* modifiers for regular expression
+          i for case insenstive search
+          g global search
+          m multiline matching
+         */
+         // more pattern for  javascript
+         //[abc] to find any character inside the bracket
+         //[0-9] find  any digit  between bracket
+         //(x|y) find   x  or y
+           //meta character
+           // \d  find a digit
+           // \s find a whitespace character
+           // \b find  match  at begining pr at end of the string
+           // \uxxxx find unicode char specified by the hexa decimal
+           var s  = "kalrbanabcit akNit shyanmu";
+           var r = s.search(/[abc]/g);
+           document.write(r+"<br/>");
+           //quantifiers defines quantities
+           document.write(s.match(/n+/i)+"</br>"); //search for n occuring more than one
+           // more quanttifiers are
+          //   n* for zero or more  occurences
+          // n? for zero or one occurences
+           // methods for regular expression
+             //test()
+             var pat = /baby/;
+             var re = pat.test("i am best baby");
+             // we can directly use regular expression without any variable /e/.test();
+             document.write(re);
+             document.write(/best/.exec("i am best baby"));
+             // to string
+             var patt = new RegExp("inab","i");
+             document.write(patt.toString());
+   </script>
+</body>
+</html>
